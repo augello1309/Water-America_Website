@@ -1,0 +1,536 @@
+html,
+body {
+    padding: 0px;
+    margin: 0;
+}
+
+main {
+    height: 100vh;
+    background: lightblue url(/static/background.jpg) no-repeat fixed center;
+
+}
+
+.topback {
+    position: relative;
+    /* height: 40vh; */
+    height: 11vh;
+    background-color: rgb(58, 36, 180);
+    /* margin: -7px; */
+    padding: 0px;
+}
+
+.topback2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background-color: rgb(58, 36, 180);
+    padding: 0 10px;
+}
+
+.LoginBox {
+    position: relative;
+    height: 37vh;
+    width: 30vw;
+    left: 67vw;
+    bottom: 6.5vh;
+    background-color: rgb(255, 255, 255);
+    /* transform: translate(250%, 5%); */
+    /* border-radius: 25px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* add spacing between elements inside flex */
+    gap: 2.5vh;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    /* box-shadow: 1px 1px 1px black inset; */
+
+}
+
+.SignUpBox {
+    height: 56vh;
+    width: 20vw;
+    left: 75vw;
+
+}
+
+.LoginButton {
+    /* position: fixed;
+    top: 5vh;
+    right: 15vh; */
+    width: 40vh;
+    height: 10vh;
+    font-size: 3vh;
+    border-radius: 10px;
+    background-color: #4D8FF4;
+    border-color: #4D8FF4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.CustomLogIn {
+    width: 20vw;
+    left: 75vw;
+}
+
+.SignUpButton {
+    /* position: fixed;
+    top: 23vh;
+    right: 15vh; */
+    width: 40vh;
+    height: 10vh;
+    font-size: 3vh;
+    border-radius: 10px;
+    background-color: #4D8FF4;
+    border-color: #4D8FF4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.SignUpButton1 {
+    position: absolute;
+    transform: translate(17%, 400%);
+    width: 300px;
+    height: 50px;
+}
+
+.SignUpButton2 {
+    position: absolute;
+    transform: translate(17%, 500%);
+    width: 300px;
+    height: 50px;
+}
+
+
+.SignUpUser {
+    position: relative;
+    top: 36px;
+    left: 45px;
+    width: 300px;
+    height: 25px;
+
+}
+
+/* .LoginBoxSignUp {
+    width: 40vh;
+    height: 10vh;
+    font-size: 3vh;
+    border-radius: 10px;
+    background-color: #4D8FF4;
+    border-color: #4D8FF4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+} */
+
+.Username {
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    left: 50px;
+}
+
+.PasswordUser {
+    position: absolute;
+    top: 86px;
+    left: 45px;
+    width: 300px;
+    height: 25px;
+}
+
+.Password {
+    position: absolute;
+    font-size: 20px;
+    top: 60px;
+    left: 50px;
+}
+
+
+
+.WaterAmerica {
+    position: relative;
+    /* background-color: rgb(241, 177, 241); */
+    font-size: 6vh;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    top: 1vh;
+    left: 0.0vw;
+    width: 25vw;
+    height: 10vh;
+    margin-bottom: 2.5%;
+    color: White;
+}
+
+.WaterAmerica2 {
+    /* //  flex-grow: 1;  */
+    font-size: 6vh;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: White;
+    padding: 10px;
+}
+
+.profileimage {
+    /* position: relative;
+    left: 70vw;
+    bottom: 8vh; */
+    height: 100px;
+    width: 100px;
+}
+
+
+.MainPanel {
+    display: flex;
+    justify-content: center;
+    /* background-color: darkgray; */
+    padding: 20px;
+    /* background image of background.jpg */
+    background: lightblue url(/static/background.jpg) no-repeat fixed center;
+    height: 100%;
+    align-items: start;
+}
+
+.addressBlock {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.newaddress {
+    position: relative;
+    height: 50px;
+    width: 70px;
+
+}
+
+.HomeButton {
+    /* position: relative;
+    left: 30vw;
+    bottom: 7vh; */
+    position: relative;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    bottom: 11.5vh;
+    left: 30vw;
+
+}
+
+.HomeTopBack2 {
+    color: White;
+    text-decoration: underline;
+}
+
+.logouttemp {
+    /* position: relative;
+    left: 35vw;
+    bottom: 7vh; */
+    color: White;
+    text-decoration: underline;
+}
+
+.moveaddress {
+    /* position: relative;
+    left: 40vw;
+    bottom: 7vh; */
+    color: White;
+    text-decoration: underline;
+}
+
+.moveaddressform {
+    background: white;
+}
+
+.addresscheckbox {
+    position: relative;
+    background-color: darkgray;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 1vw;
+    height: 32vh;
+    width: 30vh;
+
+}
+
+.formsummary {
+    position: relative;
+    top: 17vh;
+    left: 5vw;
+
+}
+
+.editsummary {
+    position: relative;
+    top: 12vh;
+    left: 12vw;
+}
+
+.adminpage {
+    /* position: relative;
+    left: 50vw;
+    bottom: 7vh; */
+    color: White;
+    text-decoration: underline;
+
+}
+
+.totalmovebox {
+    position: relative;
+    height: 8vh;
+    width: 15vw;
+    left: 5vw;
+    border-style: solid;
+    border-color: black;
+    border-width: .08em;
+    background-color: white;
+    font-size: 1.3vw;
+}
+
+.totalmoves {
+    position: relative;
+    height: 60vh;
+    width: 90vw;
+    left: 5vw;
+    top: 5vh;
+    border-style: solid;
+    border-color: black;
+    border-width: .08em;
+    background-color: rgb(255 255 255 / 70%);
+    font-size: 1.3vw;
+    overflow: auto;
+}
+
+.horizonalline {
+    position: relative;
+    border: 0 none;
+    background-color: black;
+    height: .08vh;
+}
+
+.horizonalline2 {
+    position: relative;
+    border: 0 none;
+    background-color: black;
+    height: 0.5vh;
+}
+
+.editadmin {
+    position: relative;
+    left: 70vw;
+    bottom: 10vh;
+    margin: 0;
+
+}
+
+.totalmovesheader {
+    position: relative;
+    height: 5vh;
+    width: 90vw;
+    left: 5vw;
+    top: 5vh;
+    border-style: solid;
+    border-color: black;
+    border-width: .08em;
+    background-color: white;
+    font-size: 1.3vw;
+}
+
+.editadminnone {
+    position: relative;
+    left: 70vw;
+    bottom: 5vh;
+    margin: 0;
+}
+
+.moveinfo {
+    /* position: relative;
+    left: 45vw;
+    bottom: 7vh; */
+    color: White;
+    text-decoration: underline;
+}
+
+.historyBlock {
+    position: relative;
+    background-color: white;
+    left: 100px;
+    top: 50px;
+    height: 500px;
+    width: 1200px;
+    font-size: 1.5em;
+    overflow: auto;
+}
+
+.historyline {
+    position: relative;
+    border: 0 none;
+    background-color: black;
+    height: 0.5vh;
+}
+
+.nameblock {
+    position: relative;
+    height: 35vh;
+    background-color: lightgray;
+}
+
+.Bigprofilepic {
+    position: relative;
+    height: 30vh;
+    top: 3vh;
+    left: 4vh;
+}
+
+.bigname {
+    position: relative;
+    font-size: 3em;
+    left: 22vw;
+    bottom: 15vh;
+
+}
+
+.moveBlock {
+    position: relative;
+    background-color: white;
+    /* left: 100px;
+    top: 50px; */
+    height: 500px;
+    width: 90vw;
+    font-size: 1.5em;
+    overflow: auto;
+}
+
+.viewform {
+    position: relative;
+    left: 15vw;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .topback2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* .WaterAmerica2, .profileimage, .HomeButton, .logouttemp, .moveaddress, .moveinfo, .adminpage {
+        width: 100%;
+        margin-bottom: 10px;
+    } */
+}
+
+/* Contact Information */
+.contactInfo {
+    background: #ffffffad;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    /* Center the div */
+}
+
+.contactInfo h2 {
+    color: #0056b3;
+    /* Dark blue */
+    margin-bottom: 15px;
+}
+
+.contactInfo h3 {
+    margin-bottom: 5px;
+}
+
+.contactInfo p {
+    margin-bottom: 15px;
+}
+
+/* Dividing sections */
+.phoneInfo,
+.businessHours,
+.emailInfo {
+    border-top: 1px solid #ccc;
+    /* Light grey border for separation */
+    padding-top: 15px;
+}
+
+/* Specific to the first child to remove border-top */
+.phoneInfo:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.AdminTable {
+    /* border: 1px solid black;
+    border-color: black; */
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3em;
+
+}
+
+.AdminBack {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 500px;
+    /* background-color: white; */
+}
+
+/* .fixed {
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    background-color: white;
+
+} */
+
+table {
+    background: white;
+}
+
+table th {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+
+}
+
+table td {
+    border-bottom: 2px solid;
+
+}
+
+table th:first-child,
+table td:first-child {
+    /* Apply a left border on the first <td> or <th> in a row */
+    border-left: 2px solid;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    /* Apply a left border on the first <td> or <th> in a row */
+    border-right: 2px solid;
+}
+
+tr.white {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.contactus {
+    /* position: relative;
+    left: 40vw;
+    bottom: 7vh; */
+    color: White;
+    text-decoration: underline;
+}
+
+/* tr.white {
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid black;
+    border-color: black;
+} */

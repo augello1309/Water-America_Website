@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{%block content%}
+<link rel="stylesheet" href="/static/formcontrolcss.css">
+<div class="topback">
+    <div class="WaterAmerica">
+        Water America
+    </div>
+    <a href="/" class="HomeButton" style="color: white; text-decoration: underline;">Home</a>
+    <a href="/SignUp" class="HomeButton" style="color: white; text-decoration: underline;">Sign Up</a>
+
+
+    <div class="LoginBox CustomLogIn">
+        <form method="POST">
+            <h3 style="position: relative; font-size: 4vh; text-align: center; bottom: 2.5vh;">Login</h3>
+            <div class="col-md-10">
+                <label for="email" style="position: relative; margin-bottom: 0vh; font-size: 2.5vh; bottom: 3vh">Email
+                    Address</label>
+                <input type="email" class="form-control"
+                    style="position: relative; height: 5vh; background-color: #CDE6FE; bottom: 2.5vh" id="email"
+                    name="email" placeholder="Enter Email" />
+            </div>
+            <div class="col-md-10">
+                <label for="password"
+                    style="position: relative; margin-bottom: 0vh; font-size: 2.5vh; bottom: 1vh;">Password</label>
+                <input type="password" class="form-control"
+                    style="position: relative; height: 5vh; background-color: #CDE6FE; bottom: 0.5vh;" id="password"
+                    name="password" placeholder="Enter Password" />
+            </div>
+            <br />
+            <!-- <button type="submit" class="btn btn-primary"
+                style="position: relative; margin-left: 16px; height: 5vh !important; width: 8vh !important; text-align: center !important; font-size: 2vh !important; position: fixed !important; bottom: 1vh;">Login</button> -->
+            <button type="submit" class="btn btn-primary"
+                style="position: relative; height: 5vh; width: 8vh; text-align: center; font-size: 2vh; bottom: 0.5vh; left: 0.85vw;">Login</button>
+        </form>
+
+    </div>
+
+</div>
+{%endblock%}

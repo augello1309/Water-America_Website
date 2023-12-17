@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{%block content%}
+<link rel="stylesheet" href="/static/formcontrolsignup.css">
+<div class="topback">
+    <div class="WaterAmerica">
+        Water America
+    </div>
+    <a href="/" class="HomeButton" style="color: white; text-decoration: underline;">Home</a>
+    <div class="LoginBox SignUpBox">
+
+        <form method="POST" style="height: 100%; margin-top: 30px;">
+            <h3 style="font-size: 3vh; text-align: center;">Sign Up</h3>
+            <div class="col-md-10">
+                <label for="email" style="margin-bottom: 0px; font-size: 1.5vh">Email Address</label>
+                <input type="email" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;" id="email"
+                    name="email" placeholder="Enter Email" />
+            </div>
+            <div class="col-md-10">
+                <label for="firstname" style="margin-bottom: 0px; font-size: 1.5vh">First Name</label>
+                <input type="text" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;" id="firstname"
+                    name="firstname" placeholder="Enter First Name" />
+            </div>
+            <div class="col-md-10">
+                <label for="lastname" style="margin-bottom: 0px; font-size: 1.5vh">Last Name</label>
+                <input type="text" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;" id="lastname"
+                    name="lastname" placeholder="Enter Last Name" />
+            </div>
+
+            <div class="col-md-10">
+                <label for="username" style="margin-bottom: 0px; font-size: 1.5vh">Username</label>
+                <input type="text" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;" id="username"
+                    name="username" placeholder="Enter Username" />
+            </div>
+            <div class="col-md-10">
+                <label for="password" style="margin-bottom: 0px; font-size: 1.5vh">Password</label>
+                <input type="password" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;"
+                    id="password" name="password" placeholder="Enter Password" />
+            </div>
+            <div class="col-md-10">
+                <label for="CPassword" style="margin-bottom: 0px; font-size: 1.5vh">Confirm Password</label>
+                <input type="password" class="form-control" style="height: 3.5vh; background-color: #CDE6FE;"
+                    id="CPassword" name="CPassword" placeholder="Confirm Password" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary"
+                style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important">Submit</button>
+        </form>
+
+
+    </div>
+
+</div>
+{%endblock%}

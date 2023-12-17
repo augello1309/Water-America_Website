@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{%block content%}
+<link rel="stylesheet" href="/static/formcontrolcss.css">
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+<!-- Contact Information -->
+<div class="contactInfo">
+    <h2>Contact US</h2>
+    <!-- Phone Information -->
+    <div class="phoneInfo">
+        <h3>Phone</h3>
+        <p>1-XXX-XXX-XXXX</p>
+    </div>
+    <!-- Business Hours -->
+    <div class="businessHours">
+        <h3>Business Hours: 7 a.m. - 7 p.m. M-F</h3>
+        <p>Self Service & to Report an Emergency, we are available 24/7</p>
+    </div>
+    <!-- Email Information -->
+    <div class="emailInfo">
+        <h3>Email</h3>
+        <p>email@gmail.com</p>
+    </div>
+</div>
+
+{% endblock %}

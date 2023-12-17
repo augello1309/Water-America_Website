@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <!-- <a href="/home"><button class="HomeButton">Home</button></a>
+    <a href="/logout"><button class="logouttemp">Logout</button></a>
+    <a href="/moveaddress"><button class="moveaddress">Change/Move Address</button></a>
+    <img class="profileimage" src="/static/Profile4.png"> -->
+
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+
+<div class="MainPanel">
+    <div class="addressBlock">
+        {% if user.address == None %}
+        </br>
+        None
+        {% else %}
+        Current address:
+        </br>
+        Street: {{user.address.address}}
+        </br>
+        City: {{user.address.city}}
+        </br>
+        State: {{user.address.state}}
+        </br>
+        Zip: {{user.address.zip}}
+        {% endif %}
+        </br>
+        </br>
+        {% if user.moveaddress == None %}
+        New address:
+        </br>
+        None
+        {% else %}
+        New address:
+        </br>
+        Street: {{user.moveaddress.address}}
+        </br>
+        City: {{user.moveaddress.city}}
+        </br>
+        State: {{user.moveaddress.state}}
+        </br>
+        Zip: {{user.moveaddress.zip}}
+        </br>
+        Move Date: {{user.moveaddress.date}}
+        </br>
+        Reason: {{user.moveaddress.reason}}
+        </br>
+        {% endif %}
+    </div>
+
+</div>
+<form method="POST" class="formsummary">
+    <p class="agreebox" style="position: relative; top: -73vh; left: 42vw; color: black; font-weight: bold;"><input
+            type="checkbox" id="agree" value="agree" name="checkbox" style="width: 2vw; ">
+        I agree
+    </p>
+    <button type="submit" class="btn btn-primary"
+        style="position: relative; margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: -74vh !important; left: 38.5vw">Submit</button>
+
+</form>
+<form method="POST" class="editsummary">
+    <button type="submit" value="editinfo" name="editinfo" class="btn btn-primary"
+        style="position: relative; margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: -74vh !important; left: 38.5vw; background-color: red !important; border-color: red !important;">Edit</button>
+
+</form>
+
+{% endblock %}

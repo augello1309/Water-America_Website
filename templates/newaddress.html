@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <!-- <a href="/home"><button class="HomeButton">Home</button></a>
+    <a href="/logout"><button class="logouttemp">Logout</button></a>
+    <a href="/moveaddress"><button class="moveaddress">Change/Move Address</button></a>
+    <img class="profileimage" src="/static/Profile4.png"> -->
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+<form method="POST">
+    <h3 style="font-size: 3vh; text-align: center;">Add Address</h3>
+    <div class="col-md-10">
+        <label for="address" style="margin-bottom: 0px; font-size: 1.5vh">Address</label>
+        <input type="text" class="form-control" style="height: 3.5vh" id="address" name="address"
+            placeholder="Enter Address" />
+    </div>
+    <div class="col-md-10">
+        <label for="city" style="margin-bottom: 0px; font-size: 1.5vh">City</label>
+        <input type="text" class="form-control" style="height: 3.5vh" id="city" name="city" placeholder="Enter City" />
+    </div>
+    <div class="col-md-10">
+        <label for="state" style="margin-bottom: 0px; font-size: 1.5vh">State</label>
+        <input type="text" class="form-control" style="height: 3.5vh" id="state" name="state"
+            placeholder="Enter State" />
+    </div>
+    <div class="col-md-10">
+        <label for="zip5" style="margin-bottom: 0px; font-size: 1.5vh">Zip</label>
+        <input type="text" class="form-control" style="height: 3.5vh" id="zip5" name="zip5"
+            placeholder="Enter Zip-Code" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary"
+        style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important">Submit</button>
+</form>
+{% endblock %}

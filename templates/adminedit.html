@@ -1,0 +1,216 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <!-- <a href="/home"><button class="HomeButton">Home</button></a>
+    <a href="/logout"><button class="logouttemp">Logout</button></a>
+    <a href="/moveaddress"><button class="moveaddress">Change/Move Address</button></a>
+    <img class="profileimage" src="/static/Profile4.png"> -->
+
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <form method="POST">
+        <button type="submit" name="adminfix" value="1"
+            style="border: none; background: none; cursor: pointer; color: white;"><u>Admin</u></button>
+    </form>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+
+<div class="moveaddressform">
+    <form method="POST">
+        <h3 style="text-align: center;">Change/Move Address</h3>
+
+
+
+
+        <div class="col-md-10">
+            <label style="font-size: 3vh; font-weight: bold;"><u>Current Address</u></label> <br />
+            <label for="address" style="margin-bottom: 0px; font-size: 1.5vh">Address</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="address" name="address"
+                value="{{user.address.address}}" placeholder="Enter Address" />
+        </div>
+
+        <div class="col-md-10">
+            <label for="city" style="margin-bottom: 0px; font-size: 1.5vh">City</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="city" name="city"
+                value="{{user.address.city}}" placeholder="Enter City" />
+        </div>
+
+        <div class="col-md-10">
+            <label for="state" style="margin-bottom: 0px; font-size: 1.5vh">State</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="state" name="state"
+                value="{{user.address.state}}" placeholder="Enter State" />
+        </div>
+        <div class="col-md-10">
+            <label for="zip5" style="margin-bottom: 0px; font-size: 1.5vh">Zip</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="zip5" name="zip5"
+                value="{{user.address.zip}}" placeholder="Enter Zip-Code" />
+        </div>
+        <br />
+
+
+
+        <div class="col-md-10">
+            <label style="font-size: 3vh; font-weight: bold;"><u>Enter New Address</u></label> <br />
+            <label for="newaddress" style="margin-bottom: 0px; font-size: 1.5vh">Address</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="newaddress" name="newaddress"
+                value="{{user.moveaddress.address}}" placeholder="Enter Address" />
+        </div>
+        <div class="col-md-10">
+            <label for="newcity" style="margin-bottom: 0px; font-size: 1.5vh">City</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="newcity" name="newcity"
+                value="{{user.moveaddress.city}}" placeholder="Enter City" />
+        </div>
+        <div class="col-md-10">
+            <label for="newstate" style="margin-bottom: 0px; font-size: 1.5vh">State</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="newstate" name="newstate"
+                value="{{user.moveaddress.state}}" placeholder="Enter State" />
+        </div>
+        <div class="col-md-10">
+            <label for="newzip5" style="margin-bottom: 0px; font-size: 1.5vh">Zip</label>
+            <input type="text" class="form-control" style="height: 3.5vh" id="newzip5" name="newzip5"
+                value="{{user.moveaddress.zip}}" placeholder="Enter Zip-Code" />
+        </div>
+        <br />
+
+        <div class="col-md-10">
+            <label for="movedate" style="margin-bottom: 0px; font-size: 3vh; font-weight: bold;"><u>Move
+                    Date</u></label>
+            <input type="date" class="form-control" style="height: 3.5vh" id="date" name="date"
+                value="{{user.moveaddress.date}}" placeholder="Enter Date" />
+        </div>
+
+        <br />
+
+        <!-- <div class="col-md-10">
+            <label for="emailconf" style="margin-bottom: 0px; font-size: 2vh">Email Confirmation</label>
+            <input type="email" class="form-control" style="height: 3.5vh" id="emailconf" name="emailconf"
+                placeholder="Enter Email" />
+        </div>
+
+        <br /> -->
+
+        <h5 style="font-size: 3vh; font-weight: bold; position: relative; left: 1vw"><u>Select a reason to move</u></h5>
+
+        <div class="addresscheckbox">
+
+            {% if user.moveaddress.reason == 'New Job' %}
+            <p class="addresscheckboxes"><input type="radio" name="radiobox" checked="checked" id="newjob"
+                    value="New Job" style="width: 2vw"> New Job
+            </p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" name="radiobox" id="newjob" value="New Job"
+                    style="width: 2vw"> New Job
+            </p>
+            {% endif %}
+
+            {% if user.moveaddress.reason == 'Change of Scenery' %}
+            <p class="addresscheckboxes"><input type="radio" id="changeofscenery" checked="checked"
+                    value="Change of Scenery" name="radiobox" style="width: 2vw">
+                Change of
+                scenery</p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="changeofscenery" value="Change of Scenery"
+                    name="radiobox" style="width: 2vw">
+                Change of
+                scenery</p>
+            {% endif %}
+            {% if user.moveaddress.reason == 'Need more Space' %}
+            <p class="addresscheckboxes"><input type="radio" id="needmorespace" checked="checked"
+                    value="Need more Space" name="radiobox" style="width: 2vw">
+                Need
+                more space
+            </p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="needmorespace" value="Need more Space" name="radiobox"
+                    style="width: 2vw">
+                Need
+                more space
+            </p>
+            {% endif %}
+
+            {% if user.moveaddress.reason == 'Economic Issues' %}
+            <p class="addresscheckboxes"><input type="radio" id="economicissues" checked="checked"
+                    value="Economic Issues" name="radiobox" style="width: 2vw">
+                Economic
+                issues</p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="economicissues" value="Economic Issues" name="radiobox"
+                    style="width: 2vw">
+                Economic
+                issues</p>
+            {% endif %}
+            {% if user.moveaddress.reason == 'Better School' %}
+            <p class="addresscheckboxes"><input type="radio" id="betterschool" checked="checked" value="Better School"
+                    name="radiobox" style="width: 2vw">
+                Better School
+            </p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="betterschool" value="Better School" name="radiobox"
+                    style="width: 2vw">
+                Better School
+            </p>
+            {% endif %}
+            {% if user.moveaddress.reason == 'Downsizing' %}
+            <p class="addresscheckboxes"><input type="radio" id="downsizing" checked="checked" value="Downsizing"
+                    name="radiobox" style="width: 2vw">
+                Downsizing</p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="downsizing" value="Downsizing" name="radiobox"
+                    style="width: 2vw">
+                Downsizing</p>
+            {% endif %}
+            {% if user.moveaddress.reason == 'other' %}
+            <p class="addresscheckboxes"><input type="radio" id="other" checked="checked" value="other" name="radiobox"
+                    style="width: 2vw"> Other
+            </p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="other" value="other" name="radiobox"
+                    style="width: 2vw"> Other
+            </p>
+            {% endif %}
+            {% if user.moveaddress.reason == 'Prefer not to Answer' %}
+            <p class="addresscheckboxes"><input type="radio" id="preferno" checked="checked"
+                    value="Prefer not to Answer" name="radiobox" style="width: 2vw">
+                Prefer
+                not to answer
+            </p>
+            {% else %}
+            <p class="addresscheckboxes"><input type="radio" id="preferno" value="Prefer not to Answer" name="radiobox"
+                    style="width: 2vw">
+                Prefer
+                not to answer
+            </p>
+            {% endif %}
+            {% if user.moveaddress.verified == True %}
+            <p class="checkbox"><input type="checkbox" id="verifiedbox" value="checked" name="verifiedbox" checked>
+                Verified
+            </p>
+            {% else %}
+            <p class="checkbox"><input type="checkbox" id="verifiedbox" name="verifiedbox"> Verified </p>
+
+            {% endif %}
+        </div>
+
+
+        <br />
+        <button type="submit" class="btn btn-primary"
+            style="margin-left: 16px; height: 5vh !important; width: 25vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important">Confirm
+            Transfer Button</button>
+
+    </form>
+    <br />
+    <br />
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+
+<div class="MainPanel">
+    <div class="addressBlock">
+        {% if address == None %}
+        <p>It Seems like there's No address linked to your profile. Add an address</p>
+        <a href="/newaddress"><button class="newaddress">Add</button></a>
+        {% else %}
+        <p>Address: {{address.address}} <br />
+            City: {{address.city}} <br />
+            State: {{address.state}} <br />
+            Zip: {{address.zip}}
+        </p>
+
+        {%endif%}
+
+    </div>
+</div>
+</div>
+{% endblock %}

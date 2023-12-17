@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+<div class="nameblock">
+    <img class="Bigprofilepic" src="/static/Profile4.png">
+    <p class="bigname">{{user.firstname}} {{user.lastname}}</p>
+
+</div>
+
+<div class="MainPanel">
+    <div class="moveBlock">
+        {% if user.moveaddress != None %}
+        Move Information:<br /><br />
+        Street: {{user.moveaddress.address}}<br />
+        City: {{user.moveaddress.city}}<br />
+        State: {{user.moveaddress.state}}<br />
+        Zip: {{user.moveaddress.zip}}<br />
+        Move Date: {{user.moveaddress.date}} <br />
+        Verified: {{user.moveaddress.verified}}<br />
+        {% else %}
+        None
+        {% endif %}
+    </div>
+</div>
+<form method="POST" class="viewform">
+    <button type="submit" class="btn btn-primary" value="1" name="movebutton"
+        style="position: relative; margin-left: 16px; height: 5vh !important; width: 25vh !important; text-align: center !important; font-size: 2vh !important; top: -39vh !important">
+        Edit</button>
+    <button type="submit" class="btn btn-primary" value="2" name="movebutton"
+        style="position: relative; margin-left: 16px; height: 5vh !important; width: 25vh !important; text-align: center !important; font-size: 2vh !important; top: -39vh !important">
+        View History</button>
+    <button type="submit" class="btn btn-primary" value="3" name="movebutton"
+        style="position: relative; margin-left: 16px; height: 5vh !important; width: 25vh !important; text-align: center !important; font-size: 2vh !important; top: -39vh !important">
+        Cancel Move</button>
+</form>
+
+
+
+<br /><br /><br /><br /><br /><br />
+
+
+</div>
+{% endblock %}

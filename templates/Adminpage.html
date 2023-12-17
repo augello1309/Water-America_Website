@@ -1,0 +1,203 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <!-- <a href="/home"><button class="HomeButton">Home</button></a>
+    <a href="/logout"><button class="logouttemp">Logout</button></a>
+    <a href="/moveaddress"><button class="moveaddress">Change/Move Address</button></a>
+    <img class="profileimage" src="/static/Profile4.png"> -->
+
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+
+    {% if role == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+
+<div class="totalmovebox">
+    Total Move in requests:
+    </br>
+    {{ count }}
+</div>
+
+<h3 style="position: relative; left: 46vw"> Total Users </h3>
+<br />
+<div class="AdminBack">
+    <form method="POST">
+        <table class="AdminTable" width="1500">
+
+            <tr class="white" style="border-bottom: 1px solid black;">
+                <th class=" fixed" width="100">Name</th>
+                <th class="fixed" width="100">Address</th>
+                <th class="fixed" width="100">Move address</th>
+            </tr>
+
+            {% for i in data %}
+            {% if i.address == None and i.moveaddress == None %}
+            <tr style="border-bottom: 4px solid black;">
+                <td width="100">
+                    <p>{{i.firstname}} {{i.lastname}}</p>
+                </td>
+                <td width="100">
+                    Address: None <br />
+                    Verified: {{i.verified}}
+                    <!-- address city state zip verified -->
+                </td>
+                <td width="100">Move Address: None<br />
+                    Move address verified: N/A <br />
+                    <button type="submit" value="{{i}}" id="editinfo" name="editinfo"
+                        class="btn btn-primary">Edit</button>
+                </td>
+
+                </td>
+                <!-- <form method="POST" class="editadmin">
+                <button type="submit" value="{{i}}" id="editinfo" name="editinfo" class="btn btn-primary"
+                    style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+
+            </form> -->
+            </tr>
+
+            {% elif i.moveaddress == None %}
+            <tr style="border-bottom: 4px solid black;">
+                <td width="100">
+                    <p>{{i.firstname}} {{i.lastname}}</p>
+                </td>
+                <td width="100">
+                    Address: {{i.address.address}} <br /> City: {{i.address.city}}<br /> State:
+                    {{i.address.state}}<br />
+                    Zip:
+                    {{i.address.zip}}<br />
+                    Verified: {{i.verified}}
+                    <!-- address city state zip verified -->
+                </td>
+                <td width="100">Move Address: None<br />
+                    Move address verified: N/A <br />
+                    <button type="submit" value="{{i}}" id="editinfo" name="editinfo"
+                        class="btn btn-primary">Edit</button>
+                </td>
+
+                <!-- <form method="POST" class="editadmin">
+                <button type="submit" value="{{i}}" id="editinfo" name="editinfo" class="btn btn-primary"
+                    style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+
+            </form> -->
+            </tr>
+
+            {% else %}
+
+
+            <tr style="border-bottom: 4px solid black;">
+                <td width="100">
+                    <p>{{i.firstname}} {{i.lastname}}</p>
+                </td>
+                <td width="100">
+                    Address: {{i.address.address}} <br /> City: {{i.address.city}}<br /> State:
+                    {{i.address.state}}<br />
+                    Zip: {{i.address.zip}}<br />
+                    Verified: {{i.verified}}
+
+                    <!-- address city state zip verified -->
+                </td>
+                <td width="100">
+                    Address: {{i.moveaddress.address}} <br /> City: {{i.moveaddress.city}}<br /> State:
+                    {{i.moveaddress.state}}<br />
+                    Zip: {{i.moveaddress.zip}}<br />
+                    Verified: {{i.moveaddress.verified}} <br />
+                    <button type="submit" value="{{i}}" id="editinfo" name="editinfo"
+                        class="btn btn-primary">Edit</button>
+                    <!-- <form method="POST" class="editadmin">
+                    <button type="submit" value="{{i}}" id="editinfo" name="editinfo" class="btn btn-primary"
+                        style=" position: relative; margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+
+                </form> -->
+                </td>
+                <!-- address city state zip verified -->
+
+            </tr>
+
+            {% endif %}
+            {% endfor %}
+        </table>
+    </form>
+</div>
+<!-- <div class="totalmovesheader">
+    Name&emsp;&emsp;&emsp;&emsp;&elastnamemsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Address&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Move
+    Address
+    <hr class="horizonalline" />
+</div> -->
+
+<!-- <div class="totalmoves">
+    {% for i in data %}
+    {% if i.address == None and i.moveaddress == None %}
+    {% if i != data[0] %}
+    <hr class="horizonalline2" />
+    {% endif %}
+    <p> {{i.firstname}} {{i.lastname}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;None
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; None
+        &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+    </p>
+    <form method="POST" class="editadminnone">
+
+        <button type="submit" value="{{i}}" name="editinfo" class="btn btn-primary"
+            style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+    </form>
+
+    {% elif i.moveaddress == None %}
+    {% if i != data[0] %}
+    <hr class="horizonalline2" />
+    {% endif %}
+    <p>{{i.firstname}}
+        {{i.lastname}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.address}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        None<br />&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.city}}<br />
+        &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.state}}<br />
+        &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.zip}}
+        <br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Account
+        verified: {{i.verified}}
+        &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+    </p>
+    <form method="POST" class="editadmin">
+        <button type="submit" value="{{i}}" name="editinfo" class="btn btn-primary"
+            style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+
+    </form>
+
+    {% else %}
+    {% if i != data[0] %}
+    <hr class="horizonalline2" />
+    {% endif %}
+    <p>{{i.firstname}}
+        {{i.lastname}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.address}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        {{i.moveaddress.address}}<br />&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.city}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;{{i.moveaddress.city}}
+        <br />
+        &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.state}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.moveaddress.state}}
+        <br />
+        &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{i.address.zip}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;{{i.moveaddress.zip}}
+        <br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Account
+        verified: {{i.verified}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Move address verified:
+        {{i.moveaddress.verified}}
+    </p>
+    <form method="POST" class="editadmin">
+        <button type="submit" value="{{i}}" id="editinfo" name="editinfo" class="btn btn-primary"
+            style="margin-left: 16px; height: 5vh !important; width: 10vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important; background-color: blue !important; border-color: blue !important;">Edit</button>
+
+    </form>
+
+
+    {% endif %}
+    {% endfor %}
+
+</div> -->
+
+
+
+{% endblock %}

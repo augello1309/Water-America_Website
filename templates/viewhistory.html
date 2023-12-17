@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="topback2">
+    <div class="WaterAmerica2">
+        Water America
+    </div>
+    <a href="/home" class="HomeTopBack2">Home</a>
+    <a href="/logout" class="logouttemp">Logout</a>
+    <a href="/moveaddress" class="moveaddress">Change/Move Address</a>
+    <a href="/moveinfo" class="moveinfo">Move Info</a>
+    <a href="/ContactUs" class="contactus"> Contact Us</a>
+    {% if user["role"] == "admin" %}
+    <a href="/Adminpage" class="adminpage">Admin</a>
+    {% endif %}
+
+    <img class="profileimage" src="/static/Profile4.png">
+
+</div>
+
+<div class="MainPanel">
+    <div class="historyBlock">
+        {% for i in user.movehistory %}
+        <p>Street: {{i.address}}</p>
+        <p>City: {{i.city}}</p>
+        <p>State: {{i.state}}</p>
+        <p>Zip: {{i.zip}}</p>
+        <form method="POST">
+            <button type="submit" class="btn btn-primary" value="{{i}}" name="deletebutton"
+                style="margin-left: 16px; height: 5vh !important; width: 25vh !important; text-align: center !important; font-size: 2vh !important; top: 30vh !important">
+                Delete</button>
+        </form>
+        <hr class="historyline">
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}
